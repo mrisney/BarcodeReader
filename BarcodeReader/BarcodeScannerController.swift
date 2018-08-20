@@ -94,13 +94,13 @@ class BarcodeScannerController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func launchApp(decodedURL: String) {
+    func sendData(decodedURL: String) {
         
         if presentedViewController != nil {
             return
         }
         
-        let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .actionSheet)
+        let alertPrompt = UIAlertController(title: "Sending Data", message: "Sending the following data to WYGLS  \(decodedURL)", preferredStyle: .actionSheet)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
             if let url = URL(string: decodedURL) {
@@ -139,7 +139,7 @@ extension BarcodeScannerController: AVCaptureMetadataOutputObjectsDelegate {
             barCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                launchApp(decodedURL: metadataObj.stringValue!)
+                sendData(decodedURL: metadataObj.stringValue!)
                 messageLabel.text = metadataObj.stringValue
             }
         }

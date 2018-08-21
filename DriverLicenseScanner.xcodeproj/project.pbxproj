@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F5004EDD530DB49894637E4 /* Pods_DriverLicenseScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B285E555665D0FB02C618357 /* Pods_DriverLicenseScanner.framework */; };
+		A38BA424212BD68A00B546DA /* JsonSerializerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38BA423212BD68A00B546DA /* JsonSerializerSwift.swift */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
 		F4F09DBE1DAF669400026BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBD1DAF669400026BB2 /* Assets.xcassets */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36C0069240AC84D7B76953C3 /* Pods-DriverLicenseScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverLicenseScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverLicenseScanner/Pods-DriverLicenseScanner.debug.xcconfig"; sourceTree = "<group>"; };
+		A38BA423212BD68A00B546DA /* JsonSerializerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSerializerSwift.swift; sourceTree = "<group>"; };
+		B285E555665D0FB02C618357 /* Pods_DriverLicenseScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriverLicenseScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB12BECA2AC9E2A949C6DAD4 /* Pods-DriverLicenseScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverLicenseScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriverLicenseScanner/Pods-DriverLicenseScanner.release.xcconfig"; sourceTree = "<group>"; };
 		F4F09DB31DAF669400026BB2 /* DriverLicenseScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverLicenseScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F09DB61DAF669400026BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F09DBB1DAF669400026BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5004EDD530DB49894637E4 /* Pods_DriverLicenseScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C853F91D9EC95BB9D152862 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B285E555665D0FB02C618357 /* Pods_DriverLicenseScanner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A9A660F69C9CE06E544A688 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36C0069240AC84D7B76953C3 /* Pods-DriverLicenseScanner.debug.xcconfig */,
+				CB12BECA2AC9E2A949C6DAD4 /* Pods-DriverLicenseScanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F4F09DAA1DAF669400026BB2 = {
 			isa = PBXGroup;
 			children = (
 				F4F09DB51DAF669400026BB2 /* BarcodeReader */,
 				F4F09DB41DAF669400026BB2 /* Products */,
+				2A9A660F69C9CE06E544A688 /* Pods */,
+				0C853F91D9EC95BB9D152862 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				F4F09DC21DAF669400026BB2 /* Info.plist */,
 				F4F09DC81DAF6A3800026BB2 /* BarcodeViewController.swift */,
 				F4F09DCA1DAF6A4F00026BB2 /* BarcodeScannerController.swift */,
+				A38BA423212BD68A00B546DA /* JsonSerializerSwift.swift */,
 			);
 			path = BarcodeReader;
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4F09DC51DAF669400026BB2 /* Build configuration list for PBXNativeTarget "DriverLicenseScanner" */;
 			buildPhases = (
+				5FF8FFA70C86B6885EFB69C5 /* [CP] Check Pods Manifest.lock */,
 				F4F09DAF1DAF669400026BB2 /* Sources */,
 				F4F09DB01DAF669400026BB2 /* Frameworks */,
 				F4F09DB11DAF669400026BB2 /* Resources */,
+				030B4DE4B9C59F375D998785 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +165,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		030B4DE4B9C59F375D998785 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DriverLicenseScanner/Pods-DriverLicenseScanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DLParser/DLParser.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverLicenseScanner/Pods-DriverLicenseScanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FF8FFA70C86B6885EFB69C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DriverLicenseScanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F4F09DAF1DAF669400026BB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F4F09DC91DAF6A3800026BB2 /* BarcodeViewController.swift in Sources */,
+				A38BA424212BD68A00B546DA /* JsonSerializerSwift.swift in Sources */,
 				F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */,
 				F4F09DCB1DAF6A4F00026BB2 /* BarcodeScannerController.swift in Sources */,
 			);
@@ -278,6 +349,7 @@
 		};
 		F4F09DC61DAF669400026BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36C0069240AC84D7B76953C3 /* Pods-DriverLicenseScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z6YQTBH7LB;
@@ -292,6 +364,7 @@
 		};
 		F4F09DC71DAF669400026BB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB12BECA2AC9E2A949C6DAD4 /* Pods-DriverLicenseScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z6YQTBH7LB;

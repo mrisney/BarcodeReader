@@ -6,5 +6,6 @@ target 'DriverLicenseScanner' do
   use_frameworks!
 
   # Pods for DriverLicenseScanner
-  pod "LicenseParser"
+  pod "DLParser"
+  pod 'SwiftyJSON'
 end

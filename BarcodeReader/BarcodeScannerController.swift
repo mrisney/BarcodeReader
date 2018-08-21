@@ -7,6 +7,8 @@
 
 import UIKit
 import AVFoundation
+import DLParser
+import SwiftyJSON
 
 class BarcodeScannerController: UIViewController {
 
@@ -94,16 +96,24 @@ class BarcodeScannerController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func sendData(decodedURL: String) {
+    func sendData(barcodeRawValue: String) {
         
         if presentedViewController != nil {
             return
         }
         
-        let alertPrompt = UIAlertController(title: "Sending Data", message: "Sending the following data to WYGLS  \(decodedURL)", preferredStyle: .actionSheet)
+  
+
+        let license =  AAMVAParser(data : barcodeRawValue).parse()
+        let json = JSONSerializer.toJson(license)
+        //let output = String(describing: license).replacingOccurrences(of: ", ", with: "\n")
+        let output = json
+        
+        
+        let alertPrompt = UIAlertController(title: "Sending Data", message: "Sending the following data to WIGLS  \(output)", preferredStyle: .actionSheet)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
-            if let url = URL(string: decodedURL) {
+            if let url = URL(string: barcodeRawValue) {
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
@@ -139,7 +149,7 @@ extension BarcodeScannerController: AVCaptureMetadataOutputObjectsDelegate {
             barCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                sendData(decodedURL: metadataObj.stringValue!)
+                sendData(barcodeRawValue: metadataObj.stringValue!)
                 messageLabel.text = metadataObj.stringValue
             }
         }
